@@ -32,6 +32,7 @@ kotlin {
             implementation(libs.compose.ui.tooling.preview)
             implementation(libs.androidx.activity.compose)
             implementation(libs.koin.android)
+            implementation(libs.ktor.client.android)
 
         }
         commonMain.dependencies {
@@ -43,6 +44,7 @@ kotlin {
             implementation(compose.components.uiToolingPreview)
             implementation(libs.koin.core)
             implementation(libs.koin.compose)
+            implementation(libs.media.kamel)
         }
     }
 }
