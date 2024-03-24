@@ -31,9 +31,9 @@ kotlin {
         androidMain.dependencies {
             implementation(libs.compose.ui.tooling.preview)
             implementation(libs.androidx.activity.compose)
+//            implementation(libs.ktor.android)
+//            implementation(libs.sqlDelight.android)
             implementation(libs.koin.android)
-            implementation(libs.ktor.client.android)
-
         }
         commonMain.dependencies {
             implementation(compose.runtime)
@@ -42,10 +42,32 @@ kotlin {
             implementation(compose.ui)
             implementation(compose.components.resources)
             implementation(compose.components.uiToolingPreview)
-            implementation(libs.koin.core)
+
+            implementation(compose.components.resources)
+//            api(libs.ktor.core)
+//            implementation(libs.ktor.contentNegotiation)
+//            implementation(libs.ktor.json)
+//            implementation(libs.ktor.logging)
+
+            implementation(libs.precompose)
+            implementation(libs.precompose.viewmodel)
+            implementation(libs.precompose.koin)
+
+            api(libs.koin.core)
             implementation(libs.koin.compose)
+            api(libs.napier)
             implementation(libs.media.kamel)
+            implementation(libs.kotlinx.coroutines.core)
+            implementation(libs.kotlinx.serialization.json)
+//            implementation(libs.kotlinx.dateTime)
         }
+
+        iosMain.dependencies {
+//            implementation(libs.ktor.darwin)
+//            implementation(libs.sqlDelight.native)
+        }
+
+
     }
 }
 
