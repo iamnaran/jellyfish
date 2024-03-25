@@ -31,27 +31,29 @@ kotlin {
         androidMain.dependencies {
             implementation(libs.compose.ui.tooling.preview)
             implementation(libs.androidx.activity.compose)
-//            implementation(libs.ktor.android)
-//            implementation(libs.sqlDelight.android)
+            implementation(libs.ktor.android)
             implementation(libs.koin.android)
+            implementation(libs.sqldelight.driver.android)
         }
         commonMain.dependencies {
             implementation(compose.runtime)
             implementation(compose.foundation)
-            implementation(compose.material)
+            implementation(compose.material3)
             implementation(compose.ui)
             implementation(compose.components.resources)
             implementation(compose.components.uiToolingPreview)
-
             implementation(compose.components.resources)
-//            api(libs.ktor.core)
-//            implementation(libs.ktor.contentNegotiation)
-//            implementation(libs.ktor.json)
-//            implementation(libs.ktor.logging)
+
+            api(libs.ktor.core)
+            implementation(libs.ktor.content.negotiation)
+            implementation(libs.ktor.logging)
+            implementation(libs.ktor.serialization.kotlinx)
 
             implementation(libs.precompose)
             implementation(libs.precompose.viewmodel)
             implementation(libs.precompose.koin)
+
+            implementation(libs.sqldelight.coroutines)
 
             api(libs.koin.core)
             implementation(libs.koin.compose)
@@ -59,12 +61,12 @@ kotlin {
             implementation(libs.media.kamel)
             implementation(libs.kotlinx.coroutines.core)
             implementation(libs.kotlinx.serialization.json)
-//            implementation(libs.kotlinx.dateTime)
+            implementation(libs.kotlinx.datetime)
         }
 
         iosMain.dependencies {
-//            implementation(libs.ktor.darwin)
-//            implementation(libs.sqlDelight.native)
+            implementation(libs.ktor.ios)
+            implementation(libs.sqldelight.driver.ios)
         }
 
 
