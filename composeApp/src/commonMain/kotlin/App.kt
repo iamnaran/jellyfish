@@ -12,6 +12,7 @@ import navigation.AppScreen
 import org.jetbrains.compose.resources.ExperimentalResourceApi
 import org.jetbrains.compose.ui.tooling.preview.Preview
 import org.koin.compose.KoinApplication
+import themes.JellyFishComposeTheme
 import ui.auth.LoginScreen
 
 
@@ -22,7 +23,7 @@ fun App() {
         modules(appModules)
     }) {
         PreComposeApp {
-            MaterialTheme {
+            JellyFishComposeTheme() {
                 RootNavHost()
             }
         }
@@ -53,7 +54,6 @@ fun RootNavHost() {
             })
 
         }
-
 
         scene(
             route = AppScreen.Main.route,

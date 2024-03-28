@@ -41,6 +41,9 @@ fun LoginScreen(
     navigateToSignUp: () -> Unit,
 ) {
 
+//    Text(getString(Res.strings.app_name))
+
+
     LoginContent("", "", onEmailChange = {
 
     },onPasswordChange = {
