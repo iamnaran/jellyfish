@@ -42,9 +42,8 @@ kotlin {
             implementation(compose.ui)
             implementation(compose.components.resources)
             implementation(compose.components.uiToolingPreview)
-            implementation(compose.components.resources)
 
-            api(libs.ktor.core)
+            implementation(libs.ktor.core)
             implementation(libs.ktor.content.negotiation)
             implementation(libs.ktor.logging)
             implementation(libs.ktor.serialization.kotlinx)
@@ -55,9 +54,9 @@ kotlin {
 
             implementation(libs.sqldelight.coroutines)
 
-            api(libs.koin.core)
+            implementation(libs.koin.core)
             implementation(libs.koin.compose)
-            api(libs.napier)
+            implementation(libs.napier)
             implementation(libs.media.kamel)
             implementation(libs.kotlinx.coroutines.core)
             implementation(libs.kotlinx.serialization.json)
@@ -68,8 +67,6 @@ kotlin {
             implementation(libs.ktor.ios)
             implementation(libs.sqldelight.driver.ios)
         }
-
-
     }
 }
 

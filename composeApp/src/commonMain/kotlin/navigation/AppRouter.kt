@@ -1,7 +1,5 @@
 package navigation
 
-import androidx.compose.ui.graphics.vector.ImageVector
-
 private object Routes {
 
     const val AUTH = "auth"
@@ -11,6 +9,7 @@ private object Routes {
     const val MAIN = "main"
     const val HOME = "home"
     const val PROFILE = "profile"
+    const val NOTIFICATION = "notification"
 
 }
 
@@ -22,15 +21,14 @@ sealed class AppScreen(val route: String) {
     }
 
     data object Main : TopLevelDestination(Routes.MAIN) {
+        data object Home : TopLevelDestination(Routes.HOME)
+        data object Notification : TopLevelDestination(Routes.NOTIFICATION)
+        data object Profile : TopLevelDestination(Routes.PROFILE)
 
     }
 
 }
 
 sealed class TopLevelDestination(
-    val route: String,
-//    val title: Int? = null,
-    val selectedIcon: ImageVector? = null,
-    val unselectedIcon: ImageVector? = null,
-//    val navArguments: List<NamedNavArgument> = emptyList()
+    val route: String
 )

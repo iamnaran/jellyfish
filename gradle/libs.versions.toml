@@ -4,25 +4,25 @@ android-compileSdk = "34"
 android-minSdk = "24"
 android-targetSdk = "34"
 androidx-activityCompose = "1.8.2"
+androidx-appcompat = "1.6.1"
+androidx-constraintlayout = "2.1.4"
 androidx-core-ktx = "1.12.0"
-#Test
 androidx-espresso-core = "3.5.1"
+androidx-material = "1.11.0"
 androidx-test-junit = "1.1.5"
-#Compose
 compose = "1.6.2"
 compose-plugin = "1.6.0"
 junit = "4.13.2"
 kotlin = "1.9.22"
-kotlinx-datetime = "0.6.0-RC.2"
 
-# Kotlin Multiplatform Version
+# Multiplatform Version
+kotlinx-datetime = "0.6.0-RC.2"
 kotlinxCoroutinesCore = "1.7.3"
 kotlinxSerializationJson = "1.6.2"
 ktor = "2.3.9"
 napier = "2.7.1"
 koin = "3.5.3"
 koin-compose = "1.1.2"
-lifecycle-version = "2.7.0"
 kamel = "0.9.4"
 precompose = "1.5.11"
 sqlDelight = "2.0.1"
@@ -34,7 +34,9 @@ junit = { group = "junit", name = "junit", version.ref = "junit" }
 androidx-core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "androidx-core-ktx" }
 androidx-test-junit = { group = "androidx.test.ext", name = "junit", version.ref = "androidx-test-junit" }
 androidx-espresso-core = { group = "androidx.test.espresso", name = "espresso-core", version.ref = "androidx-espresso-core" }
-
+androidx-appcompat = { group = "androidx.appcompat", name = "appcompat", version.ref = "androidx-appcompat" }
+androidx-material = { group = "com.google.android.material", name = "material", version.ref = "androidx-material" }
+androidx-constraintlayout = { group = "androidx.constraintlayout", name = "constraintlayout", version.ref = "androidx-constraintlayout" }
 androidx-activity-compose = { module = "androidx.activity:activity-compose", version.ref = "androidx-activityCompose" }
 compose-ui-tooling = { module = "androidx.compose.ui:ui-tooling", version.ref = "compose" }
 compose-ui-tooling-preview = { module = "androidx.compose.ui:ui-tooling-preview", version.ref = "compose" }
@@ -63,6 +65,7 @@ sqldelight-driver-android = { module = "app.cash.sqldelight:android-driver", ver
 sqldelight-driver-ios = { module = "app.cash.sqldelight:native-driver", version.ref = "sqlDelight" }
 media-kamel = { module = "media.kamel:kamel-image", version.ref = "kamel" }
 napier = { module = "io.github.aakira:napier", version.ref = "napier" }
+
 
 [plugins]
 androidApplication = { id = "com.android.application", version.ref = "agp" }
