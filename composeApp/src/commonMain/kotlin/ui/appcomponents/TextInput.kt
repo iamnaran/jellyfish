@@ -5,8 +5,6 @@ import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.foundation.text.KeyboardActions
 import androidx.compose.foundation.text.KeyboardOptions
 import androidx.compose.material3.Icon
-import androidx.compose.material3.IconButton
-import androidx.compose.material3.Shapes
 import androidx.compose.material3.Text
 import androidx.compose.material3.TextField
 import androidx.compose.runtime.Composable
@@ -17,6 +15,7 @@ import androidx.compose.runtime.setValue
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.focus.FocusRequester
 import androidx.compose.ui.focus.focusRequester
+import androidx.compose.ui.graphics.painter.Painter
 import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.compose.ui.text.input.ImeAction
 import androidx.compose.ui.text.input.KeyboardCapitalization
@@ -28,8 +27,8 @@ import androidx.compose.ui.unit.dp
 @Composable
 fun EmailInput(
     label: String,
-    icon: ImageVector,
     currentValue: String,
+    icon: Painter,
     focusRequester: FocusRequester? = null,
     keyboardActions: KeyboardActions,
     onValueChange: (String) -> Unit
@@ -41,7 +40,7 @@ fun EmailInput(
         modifier = Modifier
             .fillMaxWidth()
             .focusRequester(focusRequester ?: FocusRequester()),
-        leadingIcon = { Icon(imageVector = icon, contentDescription = label) },
+        leadingIcon = { Icon(painter = icon, contentDescription = label) },
         label = { Text(text = label) },
         shape = RoundedCornerShape(8.dp),
         singleLine = true,
@@ -59,7 +58,7 @@ fun EmailInput(
 @Composable
 fun PasswordInput(
     label: String,
-    icon: ImageVector,
+    icon: Painter,
     currentValue: String,
     focusRequester: FocusRequester? = null,
     keyboardActions: KeyboardActions,
@@ -74,31 +73,13 @@ fun PasswordInput(
         modifier = Modifier
             .fillMaxWidth()
             .focusRequester(focusRequester ?: FocusRequester()),
-        leadingIcon = { Icon(imageVector = icon, contentDescription = label) },
-        trailingIcon = {
-            val passwordIcon = if (passwordVisible) {
-//                AppIcons.PasswordEyeVisible
-            } else {
-//                AppIcons.PasswordEyeInvisible
-            }
-            val description = if (passwordVisible) {
-                "Hide Password"
-            } else {
-                "Show Password"
-            }
-//            IconButton(onClick = { passwordVisible = !passwordVisible }) {
-//                Icon(imageVector = passwordIcon, contentDescription = description)
-//            }
-        },
+        leadingIcon = { Icon(painter = icon, contentDescription = label) },
         label = { Text(text = label) },
         shape = RoundedCornerShape(8.dp),
         singleLine = true,
         keyboardActions = keyboardActions,
-        visualTransformation = if (passwordVisible) {
-            VisualTransformation.None
-        } else {
-            PasswordVisualTransformation()
-        },
+        visualTransformation =
+            PasswordVisualTransformation(),
         keyboardOptions = KeyboardOptions(
             capitalization = KeyboardCapitalization.None,
             autoCorrect = true,

@@ -1,6 +1,8 @@
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.runtime.Composable
 import di.appModules
+import io.github.aakira.napier.DebugAntilog
+import io.github.aakira.napier.Napier
 import jellyfish.composeapp.generated.resources.Res
 import moe.tlaster.precompose.PreComposeApp
 import moe.tlaster.precompose.navigation.NavHost
@@ -25,6 +27,9 @@ fun App() {
             }
         }
     }
+
+    Napier.base(DebugAntilog())
+
 }
 
 @Composable
@@ -41,11 +46,23 @@ fun RootNavHost() {
         ) {
             LoginScreen(navigateToHome = {
 
+                navigator.navigate(AppScreen.Main.route)
+
             }, navigateToSignUp = {
 
             })
 
         }
+
+
+        scene(
+            route = AppScreen.Main.route,
+            navTransition = NavTransition(),
+        ) {
+            MainScreen()
+
+        }
+
     }
 
 

@@ -1,10 +1,15 @@
 package ui.appcomponents
 
+import jellyfish.composeapp.generated.resources.Res
+import jellyfish.composeapp.generated.resources.ic_email
+import jellyfish.composeapp.generated.resources.ic_password
+import org.jetbrains.compose.resources.ExperimentalResourceApi
 
+@OptIn(ExperimentalResourceApi::class)
 object AppIcons {
     // Material Icons
-//    val Email = FontAwesomeIcons.AllIcons.
-//    val Password = Icons.Default.Lock
+    val Email = Res.drawable.ic_email
+    val Password = Res.drawable.ic_password
 //    val PasswordEyeVisible = Icons.Default.Visibility
 //    val PasswordEyeInvisible = Icons.Default.VisibilityOff
 //

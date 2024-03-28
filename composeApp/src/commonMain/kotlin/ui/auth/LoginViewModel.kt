@@ -1,4 +1,8 @@
 package ui.auth
-public class LoginViewModel{
+
+import moe.tlaster.precompose.viewmodel.ViewModel
+
+public class LoginViewModel : ViewModel() {
+
 
 }
