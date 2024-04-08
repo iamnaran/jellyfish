@@ -1,10 +1,14 @@
 package data.model
 
-import kotlinx.serialization.Serializable
-
-@Serializable
 data class LoginResponse(
-    val author: String,
-    val category: String,
-    val quote: String
+    val email: String,
+    val firstName: String,
+    val gender: String,
+    val id: Int,
+    val image: String,
+    val lastName: String,
+    val token: String,.
+    val username: String
 )
+
+

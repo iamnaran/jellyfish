@@ -15,7 +15,7 @@ class AuthApiService(private val httpClient: HttpClient)  {
         password: String
     ): Flow<ApiResponse<LoginResponse>> = httpClient.safeRequestWithFlow {
         method = HttpMethod.Get
-        url(ApiEndPoints.PRODUCTS_URL)
+        url(ApiEndPoints.LOGIN_URL)
 
     }
 

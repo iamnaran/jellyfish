@@ -6,6 +6,6 @@ import ui.auth.LoginViewModel
 
 val viewModelModule = module {
     
-    factory { LoginViewModel() }
+    factory { LoginViewModel(get()) }
 
 }
