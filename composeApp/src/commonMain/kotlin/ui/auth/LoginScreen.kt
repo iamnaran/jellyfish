@@ -54,6 +54,8 @@ fun LoginScreen(
         },
         onLoginClick = {
 
+            viewModel.doLoginWork()
+
         })
 
 }

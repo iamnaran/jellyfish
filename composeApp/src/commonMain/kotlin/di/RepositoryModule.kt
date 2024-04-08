@@ -1,11 +1,11 @@
 package di
 
-import data.repo.AuthRepository
-import data.repo.AuthRepositoryImpl
+import data.repo.HomeRepository
+import data.repo.HomeRepositoryImpl
 import org.koin.dsl.module
 
 val repositoryModule = module {
 
-    single<AuthRepository> { AuthRepositoryImpl() }
+    single<HomeRepository> { HomeRepositoryImpl() }
 
 }

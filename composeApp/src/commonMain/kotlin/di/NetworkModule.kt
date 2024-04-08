@@ -1,7 +1,6 @@
 package di
 
 import data.remote.AuthApiService
-import data.remote.AuthApiServiceImpl
 import io.ktor.client.HttpClient
 import io.ktor.client.plugins.HttpTimeout
 import io.ktor.client.plugins.cache.HttpCache
@@ -26,8 +25,7 @@ object NetworkModule {
     }
 
     val authServices = module {
-        single<AuthApiService> { AuthApiServiceImpl(get()) }
-
+        single { AuthApiService(get()) }
     }
 
 
@@ -70,8 +68,6 @@ object NetworkModule {
             }
         }
     }
-
-
 
 
 }
