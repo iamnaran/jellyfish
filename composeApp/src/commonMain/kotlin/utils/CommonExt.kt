@@ -57,12 +57,16 @@ inline fun <reified T> HttpClient.safeRequestWithFlow(
         val response = request { callback() }
         emit(ApiResponse.Success(response.body()))
     } catch (e: ClientRequestException) {
+        AppLog.showLog("ClientRequestException")
         emit(ApiResponse.Error.HttpError(e.response.status.value, e.errorBody()))
     } catch (e: ServerResponseException) {
+        AppLog.showLog("ServerResponseException")
         emit(ApiResponse.Error.HttpError(e.response.status.value, e.errorBody()))
     } catch (e: IOException) {
+        AppLog.showLog("IOException")
         emit(ApiResponse.Error.NetworkError)
     } catch (e: SerializationException) {
+        AppLog.showLog("SerializationException")
         emit(ApiResponse.Error.SerializationError)
     }
 }

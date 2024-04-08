@@ -25,15 +25,13 @@ public class LoginViewModel (private val postServerLoginUseCase: PostServerLogin
             ).collectLatest { apiResponse ->
                 when (apiResponse) {
                     is ApiResponse.Success -> {
-                        if (apiResponse.body != null) {
-                            AppLog.showLog("----------LOGIN SUCCESS----------")
+                        AppLog.showLog("----------LOGIN SUCCESS----------")
 
-                            _loginState.value = _loginState.value.copy(
-                                isLoginSuccessful = true,
-                                isLoading = false
-                            )
+                        _loginState.value = _loginState.value.copy(
+                            isLoginSuccessful = true,
+                            isLoading = false
+                        )
 
-                        }
                     }
 
                     is ApiResponse.Loading -> {

@@ -1,5 +1,6 @@
 package data.model
 
+
 data class LoginResponse(
     val email: String,
     val firstName: String,
@@ -7,7 +8,7 @@ data class LoginResponse(
     val id: Int,
     val image: String,
     val lastName: String,
-    val token: String,.
+    val token: String,
     val username: String
 )
 

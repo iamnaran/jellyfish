@@ -14,6 +14,7 @@ compose = "1.6.2"
 compose-plugin = "1.6.0"
 junit = "4.13.2"
 kotlin = "1.9.22"
+kotlinx-serialization-plugin = "1.6.0"
 
 # Multiplatform Version
 kotlinx-datetime = "0.6.0-RC.2"
@@ -71,4 +72,5 @@ napier = { module = "io.github.aakira:napier", version.ref = "napier" }
 androidApplication = { id = "com.android.application", version.ref = "agp" }
 androidLibrary = { id = "com.android.library", version.ref = "agp" }
 jetbrainsCompose = { id = "org.jetbrains.compose", version.ref = "compose-plugin" }
+kotlinxSerializationJson = { id = "org.jetbrains.kotlin.plugin.serialization", version.ref = "kotlinx-serialization-plugin" }
 kotlinMultiplatform = { id = "org.jetbrains.kotlin.multiplatform", version.ref = "kotlin" }

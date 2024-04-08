@@ -4,18 +4,24 @@ import data.model.LoginResponse
 import io.ktor.client.HttpClient
 import io.ktor.client.request.url
 import io.ktor.http.HttpMethod
+import io.ktor.util.InternalAPI
 import kotlinx.coroutines.flow.Flow
 import utils.ApiResponse
 import utils.safeRequestWithFlow
 
-class AuthApiService(private val httpClient: HttpClient)  {
+class AuthApiService(private val httpClient: HttpClient) {
 
+    @OptIn(InternalAPI::class)
     suspend fun serverLogin(
         username: String,
         password: String
     ): Flow<ApiResponse<LoginResponse>> = httpClient.safeRequestWithFlow {
-        method = HttpMethod.Get
+        method = HttpMethod.Post
         url(ApiEndPoints.LOGIN_URL)
+        formParameters = parameters {
+            append("username", username)
+            append("password", password)
+        }
 
     }
 

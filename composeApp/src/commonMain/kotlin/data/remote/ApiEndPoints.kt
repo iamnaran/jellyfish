@@ -7,7 +7,7 @@ object ApiEndPoints {
     private const val BASE_URL = "https://dummyjson.com"
 
     //auth
-    const val LOGIN_URL = "$BASE_URL/login"
+    const val LOGIN_URL = "$BASE_URL/auth/login"
 
 
     //products
