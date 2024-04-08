@@ -2,8 +2,10 @@ package data.remote
 
 import data.model.LoginResponse
 import io.ktor.client.HttpClient
+import io.ktor.client.request.forms.FormDataContent
 import io.ktor.client.request.url
 import io.ktor.http.HttpMethod
+import io.ktor.http.Parameters
 import io.ktor.util.InternalAPI
 import kotlinx.coroutines.flow.Flow
 import utils.ApiResponse
@@ -18,10 +20,10 @@ class AuthApiService(private val httpClient: HttpClient) {
     ): Flow<ApiResponse<LoginResponse>> = httpClient.safeRequestWithFlow {
         method = HttpMethod.Post
         url(ApiEndPoints.LOGIN_URL)
-        formParameters = parameters {
+        body = FormDataContent(Parameters.build {
             append("username", username)
             append("password", password)
-        }
+        })
 
     }
 

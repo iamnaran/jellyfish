@@ -9,6 +9,7 @@ import io.ktor.client.request.HttpRequestBuilder
 import io.ktor.client.request.request
 import io.ktor.client.statement.bodyAsText
 import io.ktor.http.HttpStatusCode
+import io.ktor.http.Parameters
 import io.ktor.utils.io.errors.IOException
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.flow
@@ -55,6 +56,29 @@ inline fun <reified T> HttpClient.safeRequestWithFlow(
 ): Flow<ApiResponse<T>> = flow {
     try {
         val response = request { callback() }
+        emit(ApiResponse.Success(response.body()))
+    } catch (e: ClientRequestException) {
+        AppLog.showLog("ClientRequestException")
+        emit(ApiResponse.Error.HttpError(e.response.status.value, e.errorBody()))
+    } catch (e: ServerResponseException) {
+        AppLog.showLog("ServerResponseException")
+        emit(ApiResponse.Error.HttpError(e.response.status.value, e.errorBody()))
+    } catch (e: IOException) {
+        AppLog.showLog("IOException")
+        emit(ApiResponse.Error.NetworkError)
+    } catch (e: SerializationException) {
+        AppLog.showLog("SerializationException")
+        emit(ApiResponse.Error.SerializationError)
+    }
+}
+
+
+inline fun <reified T> HttpClient.submitFormFlow(formParameters: Parameters = Parameters.Empty,
+                                                 crossinline callback: HttpRequestBuilder.() -> Unit,
+): Flow<ApiResponse<T>> = flow {
+    try {
+        val response = request { callback() }
+        response
         emit(ApiResponse.Success(response.body()))
     } catch (e: ClientRequestException) {
         AppLog.showLog("ClientRequestException")
