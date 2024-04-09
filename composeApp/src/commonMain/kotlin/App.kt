@@ -1,19 +1,17 @@
-import androidx.compose.material3.MaterialTheme
 import androidx.compose.runtime.Composable
 import di.appModules
 import io.github.aakira.napier.DebugAntilog
 import io.github.aakira.napier.Napier
-import jellyfish.composeapp.generated.resources.Res
 import moe.tlaster.precompose.PreComposeApp
 import moe.tlaster.precompose.navigation.NavHost
 import moe.tlaster.precompose.navigation.rememberNavigator
 import moe.tlaster.precompose.navigation.transition.NavTransition
 import navigation.AppScreen
-import org.jetbrains.compose.resources.ExperimentalResourceApi
 import org.jetbrains.compose.ui.tooling.preview.Preview
 import org.koin.compose.KoinApplication
 import themes.JellyFishComposeTheme
 import ui.auth.LoginScreen
+import ui.main.MainScreen
 import utils.AppLog
 
 

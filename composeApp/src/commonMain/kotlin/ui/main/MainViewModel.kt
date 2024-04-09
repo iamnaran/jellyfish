@@ -1,4 +1,4 @@
-package ui
+package ui.main
 public class MainViewModel{
 
 }

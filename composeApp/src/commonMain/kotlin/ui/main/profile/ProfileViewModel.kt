@@ -1,4 +1,4 @@
-package ui.profile
+package ui.main.profile
 public class ProfileViewModel{
 
 }

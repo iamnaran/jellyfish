@@ -1,4 +1,4 @@
-package ui.profile
+package ui.main.profile
 
 import androidx.compose.runtime.Composable
 

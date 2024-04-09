@@ -17,6 +17,7 @@ import androidx.compose.material3.Button
 import androidx.compose.material3.Text
 import androidx.compose.material3.TextButton
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.collectAsState
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.focus.FocusManager
@@ -40,10 +41,13 @@ fun LoginScreen(
     navigateToHome: () -> Unit,
     navigateToSignUp: () -> Unit,
 ) {
-    
-    LoginContent("", "", onEmailChange = {
 
-    },onPasswordChange = {
+    val loginState = viewModel.loginState.collectAsState()
+
+
+    LoginContent("", "", loginState.value.isLoginSuccessful, onEmailChange = {
+
+    }, onPasswordChange = {
 
     },
         onSignUpClick = {
@@ -63,6 +67,7 @@ fun LoginScreen(
 fun LoginContent(
     email: String,
     password: String,
+    loggedInStatus: Boolean,
     onEmailChange: (String) -> Unit,
     onPasswordChange: (String) -> Unit,
     onLoginClick: () -> Unit,
@@ -79,6 +84,9 @@ fun LoginContent(
         verticalArrangement = Arrangement.SpaceEvenly,
         horizontalAlignment = Alignment.CenterHorizontally
     ) {
+        if (loggedInStatus) {
+            Text("Login Success")
+        }
 
         Box(
             modifier = Modifier
