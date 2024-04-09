@@ -1,14 +1,19 @@
 package di
 
+import data.remote.ApiEndPoints
 import data.remote.AuthApiService
 import io.ktor.client.HttpClient
 import io.ktor.client.plugins.HttpTimeout
 import io.ktor.client.plugins.cache.HttpCache
 import io.ktor.client.plugins.contentnegotiation.ContentNegotiation
+import io.ktor.client.plugins.defaultRequest
 import io.ktor.client.plugins.logging.LogLevel
 import io.ktor.client.plugins.logging.Logger
 import io.ktor.client.plugins.logging.Logging
 import io.ktor.client.plugins.observer.ResponseObserver
+import io.ktor.http.ContentType
+import io.ktor.http.ContentType.Application.Json
+import io.ktor.http.contentType
 import io.ktor.http.headers
 import io.ktor.http.headersOf
 import io.ktor.serialization.kotlinx.json.json
@@ -51,6 +56,11 @@ object NetworkModule {
                 headers {
                     headersOf("Content-Type", "application/json")
                 }
+            }
+
+            defaultRequest {
+                url(ApiEndPoints.BASE_URL)
+                contentType(Json)
             }
 
             install(HttpCache)

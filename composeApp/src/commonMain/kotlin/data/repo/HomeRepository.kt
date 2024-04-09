@@ -1,8 +1,7 @@
 package data.repo
 
-class HomeRepository {
-    fun serverLogin(username: String, password: String) {
+import data.remote.HomeApiService
 
+class HomeRepository (homeApiService: HomeApiService){
 
-    }
 }
