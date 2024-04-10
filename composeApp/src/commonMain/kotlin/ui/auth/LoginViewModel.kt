@@ -10,10 +10,39 @@ import moe.tlaster.precompose.viewmodel.viewModelScope
 import utils.ApiResponse
 import utils.AppLog
 
-public class LoginViewModel (private val postServerLoginUseCase: PostServerLoginUseCase) : ViewModel() {
+public class LoginViewModel(private val postServerLoginUseCase: PostServerLoginUseCase) :
+    ViewModel() {
 
     private val _loginState = MutableStateFlow(LoginState())
     val loginState = _loginState.asStateFlow()
+
+
+    fun handleLoginUIEvent(loginUiEvents: LoginUIEvent) {
+
+        when (loginUiEvents) {
+
+            is LoginUIEvent.EmailChanged -> {
+                _loginState.value = loginState.value.copy(
+                    password = loginUiEvents.inputEmailValue
+                )
+            }
+
+            is LoginUIEvent.PasswordChanged -> {
+
+                _loginState.value = _loginState.value.copy(
+                    password = loginUiEvents.inputPasswordValue
+                )
+
+            }
+
+            is LoginUIEvent.OnSubmit -> {
+                doLoginWork()
+            }
+
+            else -> {
+            }
+        }
+    }
 
     fun doLoginWork() {
 

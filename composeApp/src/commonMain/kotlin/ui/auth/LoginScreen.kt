@@ -17,6 +17,7 @@ import androidx.compose.material3.Button
 import androidx.compose.material3.Text
 import androidx.compose.material3.TextButton
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.collectAsState
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
@@ -32,8 +33,10 @@ import jellyfish.composeapp.generated.resources.ic_password
 import moe.tlaster.precompose.koin.koinViewModel
 import org.jetbrains.compose.resources.ExperimentalResourceApi
 import org.jetbrains.compose.resources.painterResource
+import ui.appcomponents.AppCircularProgressBar
 import ui.appcomponents.EmailInput
 import ui.appcomponents.PasswordInput
+import ui.appcomponents.ProgressType
 
 @Composable
 fun LoginScreen(
@@ -45,18 +48,29 @@ fun LoginScreen(
     val loginState = viewModel.loginState.collectAsState()
 
 
-    LoginContent("", "", loginState.value.isLoginSuccessful, onEmailChange = {
+    if (loginState.value.isLoginSuccessful) {
+        LaunchedEffect(Unit) {
+            navigateToHome()
+        }
+    }
 
-    }, onPasswordChange = {
 
-    },
+
+    LoginContent(loginState.value.email,
+        loginState.value.password,
+        loginState.value.isLoginSuccessful,
+        onEmailChange = {
+            viewModel.handleLoginUIEvent(LoginUIEvent.EmailChanged(it))
+
+        },
+        onPasswordChange = {
+            viewModel.handleLoginUIEvent(LoginUIEvent.PasswordChanged(it))
+        },
         onSignUpClick = {
 
         },
         onLoginClick = {
-
-            viewModel.doLoginWork()
-
+            viewModel.handleLoginUIEvent(LoginUIEvent.OnSubmit)
         })
 
 }
@@ -84,9 +98,6 @@ fun LoginContent(
         verticalArrangement = Arrangement.SpaceEvenly,
         horizontalAlignment = Alignment.CenterHorizontally
     ) {
-        if (loggedInStatus) {
-            Text("Login Success")
-        }
 
         Box(
             modifier = Modifier
@@ -128,6 +139,7 @@ fun LoginContent(
 
                 Spacer(modifier = Modifier.height(30.dp))
 
+
                 Button(
                     onClick = {
                         onLoginClick()
@@ -136,10 +148,12 @@ fun LoginContent(
                         .fillMaxWidth()
                 ) {
                     Box {
+                        if (loggedInStatus) {
+                            AppCircularProgressBar(progressType = ProgressType.SMALL)
+                        } else {
+                            Text(text = "Sign In", Modifier.padding(8.dp))
 
-                        Text(text = "Sign In", Modifier.padding(8.dp))
-
-
+                        }
                     }
                 }
             }
@@ -156,7 +170,6 @@ fun LoginContent(
                 Row(verticalAlignment = Alignment.CenterVertically) {
                     Text(text = "Don't have an account?", color = Color.Black)
                     TextButton(onClick = {
-
                         onSignUpClick()
 
                     }) {
