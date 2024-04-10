@@ -1,4 +1,4 @@
-package ui.main.home.explore
+package ui.main.explore
 
 import moe.tlaster.precompose.viewmodel.ViewModel
 

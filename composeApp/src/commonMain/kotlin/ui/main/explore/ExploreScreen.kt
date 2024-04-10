@@ -1,4 +1,4 @@
-package ui.main.home.explore
+package ui.main.explore
 
 import androidx.compose.foundation.layout.Column
 import androidx.compose.material3.Text

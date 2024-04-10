@@ -10,8 +10,7 @@ import moe.tlaster.precompose.viewmodel.viewModelScope
 import utils.ApiResponse
 import utils.AppLog
 
-public class LoginViewModel(private val postServerLoginUseCase: PostServerLoginUseCase) :
-    ViewModel() {
+public class LoginViewModel(private val postServerLoginUseCase: PostServerLoginUseCase) : ViewModel() {
 
     private val _loginState = MutableStateFlow(LoginState())
     val loginState = _loginState.asStateFlow()

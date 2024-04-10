@@ -1,4 +1,4 @@
-package navigation.topbar
+package ui.navigation.topbar
 
 import androidx.compose.foundation.layout.Row
 import androidx.compose.material3.CenterAlignedTopAppBar
