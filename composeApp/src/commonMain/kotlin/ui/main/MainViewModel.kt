@@ -1,4 +1,8 @@
 package ui.main
-public class MainViewModel{
+
+import moe.tlaster.precompose.viewmodel.ViewModel
+
+public class MainViewModel : ViewModel(){
+
 
 }

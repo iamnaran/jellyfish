@@ -7,15 +7,15 @@ import org.jetbrains.compose.resources.ExperimentalResourceApi
 
 private object Routes {
 
-    const val AUTH = "auth"
-    const val LOGIN = "login"
-    const val REGISTER = "signup"
+    const val AUTH = "/auth"
+    const val LOGIN = "/login"
+    const val REGISTER = "/signup"
 
-    const val MAIN = "main"
-    const val HOME = "home"
-    const val PROFILE = "profile"
-    const val EXPLORE = "explore"
-    const val NOTIFICATION = "notification"
+    const val MAIN = "/main"
+    const val HOME = "/home"
+    const val PROFILE = "/profile"
+    const val EXPLORE = "/explore"
+    const val NOTIFICATION = "/notification"
 
 }
 

@@ -8,6 +8,7 @@ import androidx.compose.runtime.collectAsState
 import moe.tlaster.precompose.navigation.NavOptions
 import moe.tlaster.precompose.navigation.Navigator
 import ui.navigation.AppScreen
+import ui.navigation.currentRoute
 
 @Composable
 fun BottomBar(
@@ -40,9 +41,4 @@ fun BottomBar(
                 })
         }
     }
-}
-
-@Composable
-fun currentRoute(navigator: Navigator): String? {
-    return navigator.currentEntry.collectAsState(null).value?.route?.route
 }
