@@ -16,7 +16,7 @@ fun RootNavHost(navigator: Navigator) {
     NavHost(
         navigator = navigator,
         navTransition = NavTransition(),
-        initialRoute = AppScreen.Auth.Login.route,
+        initialRoute = AppScreen.Auth.route,
     ) {
 
         group(
@@ -28,7 +28,7 @@ fun RootNavHost(navigator: Navigator) {
                 navTransition = NavTransition(),
             ) {
                 LoginScreen(navigateToHome = {
-                    navigator.navigate(AppScreen.Main.route)
+                    navigator.navigate(AppScreen.Main.Home.route)
                 }, navigateToSignUp = {
 
                 })
@@ -38,7 +38,7 @@ fun RootNavHost(navigator: Navigator) {
 
         group(
             route = AppScreen.Main.route,
-            initialRoute = AppScreen.Main.Home.route,
+            initialRoute = AppScreen.Main.Notification.route,
         ) {
 
             scene(

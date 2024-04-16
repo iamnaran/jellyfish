@@ -7,15 +7,15 @@ import org.jetbrains.compose.resources.ExperimentalResourceApi
 
 private object Routes {
 
-    const val AUTH = "/auth"
-    const val LOGIN = "/login"
-    const val REGISTER = "/signup"
+    const val AUTH = "auth"
+    const val LOGIN = "login"
+    const val REGISTER = "signup"
 
-    const val MAIN = "/main"
-    const val HOME = "/home"
-    const val PROFILE = "/profile"
-    const val EXPLORE = "/explore"
-    const val NOTIFICATION = "/notification"
+    const val MAIN = "main"
+    const val HOME = "home"
+    const val PROFILE = "profile"
+    const val EXPLORE = "explore"
+    const val NOTIFICATION = "notification"
 
 }
 
@@ -26,7 +26,6 @@ sealed class AppScreen(val route: String) {
         data object Register : AppScreen(Routes.REGISTER)
     }
 
-    @OptIn(ExperimentalResourceApi::class)
     data object Main : TopLevelDestination(Routes.MAIN) {
         data object Home : TopLevelDestination(Routes.HOME, "Home")
         data object Notification : TopLevelDestination(Routes.NOTIFICATION, "Notification")

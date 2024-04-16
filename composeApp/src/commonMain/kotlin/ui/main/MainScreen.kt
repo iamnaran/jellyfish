@@ -42,14 +42,14 @@ fun MainContent() {
     val showTopBarState = rememberSaveable { (mutableStateOf(true)) }
     val snackbarHostState = remember { SnackbarHostState() }
 
-    val currentRoute = currentRoute(navigator)
+    when (currentRoute(navigator)) {
 
-    when (currentRoute) {
         AppScreen.Main.route -> {
+            AppLog.showLog("CALLED" + "1")
             showBottomBarState.value = true
             showTopBarState.value = true
+            topAppbarTitle.value = "This is Main Route"
         }
-
         AppScreen.Main.Home.route -> {
             AppLog.showLog("CALLED" + "1")
             showBottomBarState.value = true
