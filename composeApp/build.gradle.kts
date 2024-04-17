@@ -5,6 +5,8 @@ plugins {
     alias(libs.plugins.androidApplication)
     alias(libs.plugins.jetbrainsCompose)
     alias(libs.plugins.kotlinxSerializationJson)
+    alias(libs.plugins.sqldelight)
+
 }
 
 kotlin {
@@ -103,6 +105,15 @@ android {
     }
     dependencies {
         debugImplementation(libs.compose.ui.tooling)
+    }
+}
+
+sqldelight {
+    databases {
+        create("AppDatabase") {
+            packageName.set("com.delphiclab.jellyfish.composeApp.data.local.sqldelight")
+            srcDirs.setFrom("src/commonMain/kotlin")
+        }
     }
 }
 
