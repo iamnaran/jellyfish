@@ -1,6 +1,6 @@
 # Jellyfish
 
-Jellyfish is a compose multiplatform app built using Compose Multiplatform, enabling seamless development for both Android and iOS platforms.
+Jellyfish is a compose multiplatform app built using KMM Framework, for both Android and iOS platforms.
 
 
 ## Features
@@ -20,8 +20,7 @@ This is a Kotlin Multiplatform project targeting Android, iOS.
     For example, if you want to use Apple’s CoreCrypto for the iOS part of your Kotlin app,
     `iosMain` would be the right folder for such calls.
 
-* `/iosApp` contains iOS applications. Even if you’re sharing your UI with Compose Multiplatform, 
-  you need this entry point for your iOS app. This is also where you should add SwiftUI code for your project.
+* `/iosApp` contains iOS applications. 
 
 ## Firefly Android - Pure Native Version of this App
 ### [Firefly](https://github.com/iamnaran/firefly-compose)
