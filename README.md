@@ -23,23 +23,19 @@ This is a Kotlin Multiplatform project targeting Android, iOS.
 * `/iosApp` contains iOS applications. Even if you’re sharing your UI with Compose Multiplatform, 
   you need this entry point for your iOS app. This is also where you should add SwiftUI code for your project.
 
-## Android - Native Version of this App
+## Firefly Android - Pure Native Version of this App
 ### [Firefly](https://github.com/iamnaran/firefly-compose)
-- **Jetpack Compose:** Modern Android UI toolkit for building native UI.
-- **Dependency Injection - Hilt:** Android's recommended library for dependency injection.
-- **Navigation Graph:** Efficient app navigation with Jetpack Navigation.
-- **Nested Navigation Graph:** Organized navigation for a seamless user experience.
+- **Jetpack Compose:** 
+- **Dependency Injection - Hilt:** 
 - **Splash Screen API:** Attractive splash screen for a captivating app launch.
-- **Clean Architecture:** Structured architecture with Repository.
 - **Kotlin Flow:** Asynchronous programming with Kotlin's powerful Flow.
 - **Room:** Local data persistence for efficient data storage.
 - **Retrofit:** Networking library for handling API calls.
 - **Data Store Preference:** Modern data storage solution for app preferences.
 - **Login Authentication:** Secure authentication process for user login.
 - **Kotlin Coroutine NetworkResourceBound:** Efficient network-bound resource handling with coroutines.
-- **Product Listing with Offline First:** Dynamic product listing rendered in Lazy Column with offline functionality.
 
-## iOS - Native Version of this App
+## DragonFly iOS - Pure Native Version of this App
 ### [DragonFly](https://github.com/iamnaran/dragon-fly-ios)
 - **SwiftUI:** SwiftUI framework for building user interfaces.
 - **MVVM Architecture:** Follows the Model-View-ViewModel architectural pattern.
