@@ -24,7 +24,7 @@ fun BottomBar(
     NavigationBar {
         navigationScreen.forEach {
             NavigationBarItem(label = { Text(text = it.title) },
-                selected = it.route == currentRoute(navigator),
+                selected = it.route  == currentRoute(navigator) || currentRoute(navigator) == AppScreen.Main.route,
                 icon = {
 //                    Icon(
 //                        painterResource(if (it.route == currentRoute(navigator)) it.selectedIcon else it.unSelectedIcon),

@@ -38,7 +38,7 @@ fun RootNavHost(navigator: Navigator) {
 
         group(
             route = AppScreen.Main.route,
-            initialRoute = AppScreen.Main.Notification.route,
+            initialRoute = AppScreen.Main.Home.route,
         ) {
 
             scene(
