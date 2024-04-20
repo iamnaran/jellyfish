@@ -1,6 +1,6 @@
 package domain
 
-import data.repo.HomeRepository
+import data.repo.home.HomeRepository
 
 class GetProductsUseCase(
     private val homeRepository: HomeRepository

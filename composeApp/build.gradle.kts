@@ -111,8 +111,8 @@ android {
 sqldelight {
     databases {
         create("AppDatabase") {
-            packageName.set("com.delphiclab.jellyfish.composeApp.data.local.sqldelight")
-            srcDirs.setFrom("src/commonMain/kotlin")
+            packageName.set("com.delphiclab.jellyfish.db")
+            generateAsync.set(true)
         }
     }
 }

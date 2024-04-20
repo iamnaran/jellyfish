@@ -1,4 +1,4 @@
-package data.local
+package data.local.entity
 
 
 data class ProductEntity(

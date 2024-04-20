@@ -102,10 +102,6 @@ fun MainContent() {
 
                     }
                 )
-            } else {
-                Box {
-
-                }
             }
         },
         bottomBar = {

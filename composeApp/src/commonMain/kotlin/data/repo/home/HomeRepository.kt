@@ -1,4 +1,4 @@
-package data.repo
+package data.repo.home
 
 import data.remote.HomeApiService
 

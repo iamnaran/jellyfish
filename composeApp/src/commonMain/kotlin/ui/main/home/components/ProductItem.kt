@@ -13,7 +13,7 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.shadow
 import androidx.compose.ui.unit.dp
-import data.local.ProductEntity
+import data.local.entity.ProductEntity
 import themes.dimens
 
 @Composable

@@ -3,7 +3,7 @@ package ui.main.home.components
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.items
 import androidx.compose.runtime.Composable
-import data.local.ProductEntity
+import data.local.entity.ProductEntity
 
 
 @Composable
