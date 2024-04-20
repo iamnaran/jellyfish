@@ -13,11 +13,11 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.shadow
 import androidx.compose.ui.unit.dp
-import data.local.entity.ProductEntity
+import domain.model.ProductDto
 import themes.dimens
 
 @Composable
-fun ProductItem(productEntity: ProductEntity, onProductItemClick: (String) -> Unit) {
+fun ProductItem(productEntity: ProductDto, onProductItemClick: (String) -> Unit) {
 
     Card(
         modifier = Modifier
@@ -51,7 +51,7 @@ fun ProductItem(productEntity: ProductEntity, onProductItemClick: (String) -> Un
                     .padding(10.dp),
             ) {
                 Text(
-                    text = productEntity.category.uppercase(),
+                    text = productEntity.price.toString(),
                     color = MaterialTheme.colorScheme.onSecondaryContainer,
                     modifier = Modifier.padding(8.dp)
                 )

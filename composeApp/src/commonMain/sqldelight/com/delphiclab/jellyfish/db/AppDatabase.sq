@@ -4,7 +4,7 @@ CREATE TABLE Product(
     description TEXT NOT NULL,
     brand TEXT NOT NULL,
     price INTEGER NOT NULL,
-    stock INTEGER NOT NULL,
+    stock TEXT NOT NULL,
     rating TEXT NOT NULL,
     thumbnail TEXT NOT NULL
 );

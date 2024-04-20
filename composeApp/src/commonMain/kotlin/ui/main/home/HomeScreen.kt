@@ -6,6 +6,7 @@ import androidx.compose.runtime.Composable
 import androidx.compose.runtime.collectAsState
 import androidx.compose.runtime.getValue
 import moe.tlaster.precompose.koin.koinViewModel
+import ui.main.home.components.ProductList
 
 @Composable
 fun HomeScreen(
@@ -23,9 +24,9 @@ fun HomeScreen(
 @Composable
 fun HomeContent(homeState: HomeState, onProductClick: (String) -> Unit) {
     Column {
-//        ProductList(homeState.allProductEntities) {
-//            onProductClick(it)
-//        }
+        ProductList(homeState.allProductEntities) {
+            onProductClick(it)
+        }
         Text(text = "Home Screen")
     }
 

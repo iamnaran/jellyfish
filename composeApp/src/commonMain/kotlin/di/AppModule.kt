@@ -3,7 +3,7 @@ package di
 val appModules = listOf(
     NetworkModule.httpModule,
     NetworkModule.authServices,
-    CoroutineModule.coroutine,
+    coroutineModule,
     repositoryModule,
     viewModelModule,
     useCaseModule,

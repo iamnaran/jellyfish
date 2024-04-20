@@ -9,6 +9,6 @@ val databaseModule = module {
 
     single { SharedDatabase(get()) }
 
-    single<ProductDao> { ProductDaoImpl(get()) }
+    single<ProductDao> { ProductDaoImpl(get(),get()) }
 
 }

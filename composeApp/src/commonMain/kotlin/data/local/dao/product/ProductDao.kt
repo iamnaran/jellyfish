@@ -1,12 +1,12 @@
 package data.local.dao.product
 
-import data.local.entity.ProductEntity
+import domain.model.ProductDto
 import kotlinx.coroutines.flow.Flow
 
 interface ProductDao {
 
-    fun getAllProducts(): Flow<List<ProductEntity>>
+    suspend fun getAllProducts(): Flow<List<ProductDto>>
 
-    fun saveAllProducts(productEntities: List<ProductEntity>)
+    suspend fun saveAllProducts(productEntities: List<ProductDto>)
 
 }

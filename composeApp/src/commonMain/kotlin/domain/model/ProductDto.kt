@@ -1,24 +1,12 @@
-package data.local.entity
+package domain.model
 
-
-data class ProductEntity(
+data class ProductDto(
     val id: Long,
-
     val title: String,
-
     val description: String,
-
     val brand: String,
-
-    val category: String,
-
-    val price: Int,
-
+    val price: Long,
+    val stock: String,
     val rating: String,
-
-    val stock: Int,
-
     val thumbnail: String,
 )
-
-

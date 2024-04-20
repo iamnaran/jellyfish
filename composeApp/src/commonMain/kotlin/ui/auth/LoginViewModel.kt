@@ -43,7 +43,7 @@ public class LoginViewModel(private val postServerLoginUseCase: PostServerLoginU
         }
     }
 
-    fun doLoginWork() {
+    private fun doLoginWork() {
 
         viewModelScope.launch {
 

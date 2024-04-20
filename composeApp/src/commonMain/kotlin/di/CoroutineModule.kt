@@ -1,16 +1,15 @@
 package di
 
-import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
-import kotlinx.coroutines.Job
+import kotlinx.coroutines.Dispatchers.Main
+import kotlinx.coroutines.IO
+import org.koin.core.qualifier.named
 import org.koin.dsl.module
 
-
-object CoroutineModule {
-
-    val coroutine = module {
-        single { Dispatchers.Default }
-        single { CoroutineScope(Dispatchers.Main + Job()) }
-    }
+val coroutineModule = module {
+    single(named("DefaultDispatcher")) { Dispatchers.Default }
+    single(named("IoDispatcher")) { Dispatchers.IO }
+    single(named("MainDispatcher")) { Main }
+    single(named("MainImmediateDispatcher")) { Main.immediate }
 
 }
