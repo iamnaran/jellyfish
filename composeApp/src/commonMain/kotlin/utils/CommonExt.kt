@@ -76,8 +76,9 @@ inline fun <reified T> HttpClient.safeRequestWithFlow(
 }
 
 
-inline fun <reified T> HttpClient.submitFormFlow(formParameters: Parameters = Parameters.Empty,
-                                                 crossinline callback: HttpRequestBuilder.() -> Unit,
+inline fun <reified T> HttpClient.submitFormFlow(
+    formParameters: Parameters = Parameters.Empty,
+    crossinline callback: HttpRequestBuilder.() -> Unit,
 ): Flow<ApiResponse<T>> = flow {
     try {
         val response = request { callback() }
@@ -122,28 +123,3 @@ suspend inline fun <reified E> ResponseException.errorBody(): E? =
         null
     }
 
-
-
-inline fun <ResultType, RequestType> networkBoundResource(
-    crossinline query: () -> Flow<ResultType>,
-    crossinline fetch: suspend () -> RequestType,
-    crossinline saveFetchResult: suspend (RequestType) -> Unit,
-    crossinline shouldFetch: (ResultType) -> Boolean = { true }
-) = flow {
-    val data = query().first()
-
-    val flow = if (shouldFetch(data)) {
-        emit(Resource.Loading(data))
-
-        try {
-            saveFetchResult(fetch())
-            query().map { Resource.Success(it) }
-        } catch (throwable: Throwable) {
-            query().map { Resource.Error(throwable.message.toString(), it) }
-        }
-    } else {
-        query().map { Resource.Success(it) }
-    }
-
-    emitAll(flow)
-}

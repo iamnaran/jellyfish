@@ -10,7 +10,7 @@ val viewModelModule = module {
 
     factory { MainViewModel() }
     factory { LoginViewModel(get()) }
-    factory { HomeViewModel() }
+    factory { HomeViewModel(get()) }
     factory { ExploreViewModel() }
 
 }

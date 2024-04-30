@@ -1,9 +1,9 @@
 package domain
 
-import data.repo.home.HomeRepository
+import data.repo.product.ProductRepository
 
 class GetProductsUseCase(
-    private val homeRepository: HomeRepository
+    private val homeRepository: ProductRepository
 ) {
     suspend operator fun invoke() = homeRepository.getAllProducts()
 

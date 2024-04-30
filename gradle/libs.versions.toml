@@ -27,6 +27,8 @@ koin-compose = "1.1.2"
 kamel = "0.9.4"
 precompose = "1.6.0"
 sqlDelight = "2.0.1"
+splashScreen = "1.0.1"
+
 
 [libraries]
 kotlin-test = { module = "org.jetbrains.kotlin:kotlin-test", version.ref = "kotlin" }
@@ -66,6 +68,7 @@ sqldelight-driver-android = { module = "app.cash.sqldelight:android-driver", ver
 sqldelight-driver-ios = { module = "app.cash.sqldelight:native-driver", version.ref = "sqlDelight" }
 media-kamel = { module = "media.kamel:kamel-image", version.ref = "kamel" }
 napier = { module = "io.github.aakira:napier", version.ref = "napier" }
+splashScreen = { module = "androidx.core:core-splashscreen", version.ref = "splashScreen" }
 
 
 [plugins]

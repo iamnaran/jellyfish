@@ -37,6 +37,8 @@ kotlin {
             implementation(libs.ktor.android)
             implementation(libs.koin.android)
             implementation(libs.sqldelight.driver.android)
+            implementation(libs.splashScreen)
+
         }
         commonMain.dependencies {
             implementation(compose.runtime)

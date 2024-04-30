@@ -4,13 +4,12 @@ import data.model.HomeResponse
 import io.ktor.client.HttpClient
 import io.ktor.client.request.url
 import io.ktor.http.HttpMethod
-import kotlinx.coroutines.flow.Flow
 import utils.ApiResponse
-import utils.safeRequestWithFlow
+import utils.safeRequest
 
-class HomeApiService(private val httpClient: HttpClient) {
+class ProductApiService(private val httpClient: HttpClient) {
 
-    suspend fun getAllProducts(): Flow<ApiResponse<HomeResponse>> = httpClient.safeRequestWithFlow {
+    suspend fun getAllProducts(): ApiResponse<HomeResponse> = httpClient.safeRequest {
         method = HttpMethod.Get
         url(ApiEndPoints.PRODUCTS_URL)
     }

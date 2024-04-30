@@ -22,20 +22,7 @@ public class HomeViewModel(private val getProductsUseCase: GetProductsUseCase) :
     private fun getProducts() {
 
         viewModelScope.launch {
-            getProductsUseCase().collectLatest { productResource ->
-                when (productResource) {
-                    is Resource.Loading -> {
-                        _homeState.value = HomeState(productResource.data!!)
-                    }
 
-                    is Resource.Success -> {
-                        _homeState.value = HomeState(productResource.data!!)
-                    }
-
-                    else -> {
-                    }
-                }
-            }
         }
 
     }
