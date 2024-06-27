@@ -1,7 +1,0 @@
-<resources>
-    <string name="app_name">Firefly Compose</string>
-    <string name="home">Home</string>
-    <string name="profile">Profile</string>
-    <string name="notification">Notification</string>
-
-</resources>
